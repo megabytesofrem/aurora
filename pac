@@ -80,7 +80,7 @@ def parse():
     try:
         opts, args = getopt.getopt(
             sys.argv[1:],
-            'hgpi:rl',
+            'hgpi:r:l',
             ["help", "get=", "install=", "rm=", "ls-cache"]
         )
 
