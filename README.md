@@ -1,4 +1,4 @@
-# pac
+# aurora
 Probably the worlds smallest AUR helper. Now written in Rust!
 
 ## Usage
