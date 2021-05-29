@@ -20,13 +20,7 @@ pub fn run_command_cd(cmd: &str, args: Vec<String>, cd: &str) -> String {
                         .args(args)
                         .status()
                         .expect("failed to execute command");
-
-    // print any errors
     format!("{:?}", output)
-    // if output.stderr.len() > 0 {
-    //     eprintln!("error: {}", String::from_utf8_lossy(&output.stderr).to_string());
-    // }
-    // String::from_utf8_lossy(&output.stdout).to_string()
 }
 
 pub fn run_command(cmd: &str, args: Vec<String>) -> String {

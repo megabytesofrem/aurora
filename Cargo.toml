@@ -9,5 +9,7 @@ edition = "2018"
 [dependencies]
 termion = "*"
 getopts = "0.2"
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+serde = { version = "1.0.126", features = ["derive"] }
 configparser = "2.0.1"
 expanduser = "1.2.2"

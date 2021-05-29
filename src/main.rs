@@ -12,20 +12,13 @@ use std::error::Error;
 use std::fs;
 use configparser::ini::Ini;
 
-// TODO: remove this since we now parse from config.ini
-static AUR_REPO: &str = "https://aur.archlinux.org";
-static AUR_CACHE_UNEXPANDED: &str = "~/dl/aur";
-
-// should pacman run with --noconfirm when removing packages?
-static PACMAN_NOCONFIRM_REMOVE: bool = false;
-
 // TODO: Package manager specific functionality should probably be moved to aur.rs
 // or something.
 
 fn main() -> Result<(), Box<dyn Error>> {
     // Load the config.ini file
     let mut config = Ini::new();
-    let map = config.load("config.ini");
+    config.load("config.ini");
 
     let aur_cache_path = config.get("aur", "aur_cache_path").unwrap();
 

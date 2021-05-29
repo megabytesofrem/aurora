@@ -22,7 +22,10 @@ Install a package:
 `aurora -i c-lolcat`
 
 Remove a package:
-`aurora -r c-matrix`
+`aurora -r c-lolcat`
+
+Search for packages:
+`aurora -s lolcat`
 
 List all packages in the package cache
 `aurora -l` or `aurora --ls-cache`

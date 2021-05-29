@@ -36,6 +36,7 @@ pub fn parse_args(conf: ConfigOptions) {
     opts.optflag("l", "ls", "List all packages in the cache");
     opts.optflag("u", "update", "Updates all packages in the package cache");
 
+    opts.optopt("s", "search", "Search the AUR f or a specific package", "PKG");
     opts.optopt("i", "install", "Install a package to the system", "PKG");
     opts.optopt("r", "remove", "Remove a package from the system", "PKG");
 
@@ -58,6 +59,10 @@ pub fn parse_args(conf: ConfigOptions) {
     if matches.opt_present("u") {
         aur::update_all_packages();
         return;
+    }
+
+    if !matches.opt_str("s").is_none() {
+        aur::search_aur(&matches.opt_str("s").unwrap());
     }
 
     if !matches.opt_str("i").is_none() {
